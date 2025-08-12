@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>
+            <span>Balthazar</span><br>
+            <span>Schmitt</span>
+        </h1>
+        <div class="hero-photo" aria-hidden="false">
+            <img src="../assets/balthazar.jpg" alt="Balthazar Schmitt portrait">
+        </div>
+        <div class="scroll-indicator">&#8595;</div>
+    </div>
+    <main class="fade-in">
+        <!-- Titleless intro card -->
+        <section class="home-intro-card">
+            <p>
+                I am a Photographer, Mathematician, Economist, and amateur programmer. 
+                I'm in my second year of college at Purdue University in West Lafayette Indiana, and I'm looking to get more hands on experience with photography and co
+
+            </p>
+            <p>
+                Explore my photography, background, education, music and ways to get in touch below.
+            </p>
+        </section>
+
+        <!-- Medium square link cards to pages -->
+        <section class="home-links">
+            <div class="link-cards-grid">
+                <a class="link-card" href="photos.html" aria-label="Go to Photos">
+                    <span>Photos</span>
+                </a>
+                <a class="link-card" href="about.html" aria-label="Go to About Me">
+                    <span>About Me</span>
+                </a>
+                <a class="link-card" href="projects.html" aria-label="Go to Projects">
+                    <span>Projects</span>
+                </a>
+                <a class="link-card" href="music.html" aria-label="Go to Music">
+                    <span>Music</span>
+                </a>
+                <a class="link-card" href="experience.html" aria-label="Go to Experience">
+                    <span>Experience</span>
+                </a>
+                <a class="link-card" href="education.html" aria-label="Go to Education">
+                    <span>Education</span>
+                </a>
+                <a class="link-card" href="contact.html" aria-label="Go to Contact">
+                    <span>Contact</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-left"><a href="contact.html">Contact</a></div>
+        <div class="footer-right">© Balthazar Schmitt • Aug 2025</div>
+    </footer>
+
+    <script src="src/carousel.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+        // Fade in header and main when scrolled past hero
+        const fadeEls = document.querySelectorAll('.fade-in');
+        function handleFade() {
+            const hero = document.querySelector('.hero');
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            if (heroBottom < 50) {
+                fadeEls.forEach(el => el.classList.add('visible'));
+            } else {
+                fadeEls.forEach(el => el.classList.remove('visible'));
+            }
+        }
+        window.addEventListener('scroll', handleFade);
+        window.addEventListener('DOMContentLoaded', handleFade);
+    </script>
+</body>
+</html>
